@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <header className='navbar'>
       <h1>URL SHORTENER</h1>
-      <div>
+      <div className='nav-links'>
         <Link to='/'>
           <button className='home'>Home</button>
         </Link>{" "}
