@@ -3,17 +3,7 @@ import axios from "axios";
 import Header from "./Header";
 import { FaClipboard } from "react-icons/fa";
 
-function Shrink(state) {
-  // const Shrinked = ({ short_link, full_short_link }) => {
-  //   return (
-  //     <div className='link-div'>
-  //       <div className='links'>
-  //         <h3>{short_link}</h3>
-  //         <h3>{full_short_link}</h3>
-  //       </div>
-  //     </div>
-  //   );
-  // };
+function Shrink() {
   const [loading, setLoading] = useState(false);
   const [shortLink, setShortLink] = useState([]);
   useEffect((state) => {
@@ -22,15 +12,7 @@ function Shrink(state) {
   const onLoad = () => {
     setLoading(true);
   };
-  // const handleCopy = (e, i) => {
-  //   e.target.textContent = "Copied!";
-  //   e.target.style.background = "#6f5cb6";
-  //   navigator.clipboard.writeText(i);
-  //   setTimeout(function Copy() {
-  //     e.target.textContent = "Copy";
-  //     e.target.style.background = "#eb6832";
-  //   }, 2000);
-  // };
+
   const shrinkUrl = (state) => {
     axios
       .post(`https://api.shrtco.de/v2/shorten?url=${state}`)
