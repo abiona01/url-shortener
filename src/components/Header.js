@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
+import FadeLoader from "react-spinners/FadeLoader";
 function Header(props) {
   const [state, setState] = useState("");
   const handleChange = (e) => {
@@ -8,20 +9,27 @@ function Header(props) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    props.onLoad();
     props.shrinkUrl(state);
+    setState("");
   };
   return (
     <>
       <Navbar />
-      <form className="header" onSubmit={handleSubmit}>
+      <form className='header' onSubmit={handleSubmit}>
         <input
-          type="text"
-          className="input"
+          type='text'
+          className='input'
           onChange={handleChange}
           value={state}
-          placeholder="Paste URL..."
+          placeholder='Paste URL...
+          '
         />
-        <input type="submit" className="submit" value="Shrink!" />
+        {props.loading ? (
+          <FadeLoader />
+        ) : (
+          <input type='submit' className='submit' value='Shrink' />
+        )}
       </form>
     </>
   );
