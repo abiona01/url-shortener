@@ -4,9 +4,6 @@ body {
   padding: 0;
   background: rgb(250, 240, 240);
 }
-.app {
-  text-align: center;
-}
 
 h1 {
   font-size: 2rem;
@@ -17,8 +14,44 @@ h1 {
   margin-top: 2rem;
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+}
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+button {
+  font-weight: 500;
+  outline: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  border: none;
+}
+.home {
+  background-color: #fff;
+  color: rgb(102, 19, 102);
+}
+.home:hover {
+  background-color: rgb(102, 19, 102);
+  color: #fff;
+}
+.about {
+  background-color: rgb(102, 19, 102);
+  color: #fff;
+}
+.about:hover {
+  background-color: #fff;
+  color: rgb(102, 19, 102);
+}
+a {
+  text-decoration: none;
+  color: rgb(102, 19, 102);
 }
 .input {
   width: 70%;
@@ -54,11 +87,96 @@ p,
 textarea {
   font-weight: 600;
 }
+textarea {
+  font-size: 1rem;
+  padding-top: 15px;
+}
 .links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+}
+.original-link {
+  max-width: 20rem;
 }
 .short-link {
   display: block;
+}
+.clip-div::before {
+  position: absolute;
+  display: inline-block;
+  min-width: 60px;
+  height: 25px;
+  top: -20px;
+  left: 60px;
+  right: 0;
+  color: #fff;
+  display: block;
+  background: rgba(70, 67, 67, 0.55);
+  font-weight: 500;
+  line-height: 25px;
+  border-radius: 2px;
+  font-size: 1rem;
+}
+.clip-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-width: 3rem;
+  max-height: 3rem;
+  min-height: 3rem;
+  border-radius: 100%;
+  background: rgb(161, 90, 161);
+  text-align: center;
+  color: #fff;
+  margin: 10px;
+}
+
+.copy:hover::before {
+  content: "Copy";
+  padding: 10px 15px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.copied::before {
+  content: "Copied";
+  padding: 10px 15px;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+@media screen and (max-width: 400px) {
+  header {
+    width: 90%;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  .header {
+    flex-wrap: nowrap;
+  }
+  .input {
+    width: 70%;
+  }
+  .link-div {
+    width: 100%;
+  }
+  .links {
+    flex-wrap: nowrap;
+  }
+  .original-link-div {
+    max-width: 50%;
+  }
+  .original-link {
+    max-width: 10rem;
+    overflow-x: hidden;
+  }
+  p {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
 }

@@ -75,22 +75,12 @@ function Shrink(state) {
         shortLink.map((item, i) => (
           <div className='link-div' key={i}>
             <div className='links'>
-              <div className='original-link'>
-                <p>{item.original_link}</p>
+              <div className='original-link-div'>
+                <p className='original-link'>{item.original_link}</p>
               </div>
               <div className='short-link'>
-                {/* <p>{item.short_link}</p> */}
                 <div style={{ display: "flex", alignItems: "center" }}>
-                  <textarea
-                    readOnly
-                    className='mx-8'
-                    value={item.short_link}
-                    style={{
-                      border: "none",
-                      outline: "none",
-                      maxWidth: "20rem",
-                    }}
-                  />
+                  <p>{item.short_link}</p>
                   <Color />
                 </div>
               </div>
