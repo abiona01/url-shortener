@@ -34,7 +34,7 @@ button {
   border: none;
 }
 .home {
-  background-color: #fff;
+  background-color: rgb(250, 240, 240);
   color: rgb(102, 19, 102);
 }
 .home:hover {
@@ -46,7 +46,7 @@ button {
   color: #fff;
 }
 .about:hover {
-  background-color: #fff;
+  background-color: rgb(250, 240, 240);
   color: rgb(102, 19, 102);
 }
 a {
